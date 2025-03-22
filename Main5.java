@@ -1,10 +1,12 @@
-//"Q5 : 문자열 바꾸기
-// 다음과 같은 문자열 a:b:c:d 가 있다. replaceAll 메서드를 사용하여 a#b#c#d 로 바꿔서 출력해 보자
+//Q5.리스트와 객체 확인하기
 
+import java.util.ArrayList;
+import java.util.Arrays;
 public class Main5 {
     public static void main(String[] args) {
-        String a = "a:b:c:d";
-        String b = a.replace(":","#");
-        System.out.println(b); // a#b#c#d 출 력
+        ArrayList<Integer> a = new ArrayList<>(Arrays.asList(1, 2, 3));
+        ArrayList<Integer> b = a;
+        a.add(4);
+        System.out.println(b.size());
     }
 }

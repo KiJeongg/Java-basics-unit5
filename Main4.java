@@ -1,10 +1,36 @@
-//"Q4 : 원하는 숫자 출력하기
-// 주민 등록 번호 뒷자리의 첫 번째 숫자는 성별을 나타낸다. 첫 번째 숫자가 1 이면 남자를, 2 이면 여자를 의미한다.
-// 홍길동 씨의 주민 등록 번호 881120‑1068234 에서 성별을 나타내는 숫자를 출력해 보자.
+//Q4. 메서드 오버로딩하기
+// 정수 배열 또는 정수의 리스트로 그 평균을 구해 리턴하는 Calculator 클래스를 작성
+
+import java.util.ArrayList;
+import java.util.Arrays;
+
+class Calculator3 {
+    int val = 0;
+     int avg(int[] a) {
+         int total = 0;
+         for (int num : a) {
+             total += num;
+         }
+         return total / a.length;
+     }
+     int avg(ArrayList<Integer> a) {
+         int total = 0;
+         for (int num : a) {
+             total += num;
+         }
+         return total / a.size();
+     }
+}
 
 public class Main4 {
     public static void main(String[] args) {
-        String pin = "881120-1068234";
-        System.out.println(pin.charAt(7));
+        Calculator3 cal = new Calculator3();
+        int[] b = {1,3,5,7,9};
+        int result1 = cal.avg(b);
+        System.out.println(result1);
+
+        ArrayList<Integer> c = new ArrayList<>(Arrays.asList(9,5,5,7,9));
+        int result2 = cal.avg(c);
+        System.out.println(result2);
     }
 }

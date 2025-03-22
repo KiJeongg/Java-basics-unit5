@@ -1,15 +1,22 @@
-//Q8. 맵에서 값 삭제하기
-//다음과 같은 grade 맵에서 B 에 해당되는 값을 삭제해 보자.
+//Q8. 오류 찾기 1
+//다음 코드에서 1 ~ 5 중 오류가 발생하는 문장을 찾고, 오류의 원인을 설명해 보자
 
-import java.util.HashMap;
-public class Main8 {
-    public static void main(String[] args) {
-        HashMap<String, Integer> grade = new HashMap<>();
-        grade.put("A", 90);
-        grade.put("B", 80);
-        grade.put("C", 70);
-        int result = grade.remove("B");
-        System.out.println(result); // 무엇이 삭제되었는지를 출력
-        System.out.println(grade); // 현재 맵에 남아있는것을 출력
+    interface Predator {
     }
-}
+    class Animal {
+    }
+    class Dog extends Animal {
+    }
+    class Lion extends Animal implements Predator {
+    }
+    public class Main8 {
+        public static void main(String[] args) {
+            Animal a = new Animal(); // 1 번
+            Animal b = new Dog(); // 2 번
+            Animal c = new Lion(); // 3 번
+            //Dog d = new Animal(); // 4 번
+            Predator e = new Lion(); // 5 번
+        }
+
+    }
+    //4번이다 이유는 Dog 클래스는 Animal 의 자식 클래스로 IS‑A 관계가 성립될 수 없기 때문이다.

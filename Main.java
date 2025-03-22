@@ -1,10 +1,35 @@
-//"Q1 : 전과목 평균 점수를 구해보자"
-//     "국어 80, 영어 75, 수학 55"
+//Q1. Calculator 클래스를 상속하는 UpgradeCalculator를 만들고
+// 값을 뺄 수 있는 minus 메서드를 추가 10 - 3 = 7 만들기
+
+class Calculator {
+    int value;
+
+    Calculator() {
+        this.value = 0;
+    }
+
+    void add(int val) {
+        this.value += val;
+    }
+
+    int getValue() {
+        return this.value;
+    }
+}
+
+    class UpgradeCalculator extends Calculator {
+        void minus(int val) {
+            this.value -= val;
+
+    }
+}
+
 public class Main {
     public static void main(String[] args) {
-        int a = 80;
-        int b = 75;
-        int c = 55;
-        System.out.println((a+b+c)/3);
+        UpgradeCalculator cal = new UpgradeCalculator();
+        cal.add(10);
+        cal.minus(3);
+        System.out.println(cal.getValue());
+
     }
 }

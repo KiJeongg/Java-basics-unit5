@@ -1,14 +1,33 @@
-//Q7.리스트를 문자열로 만들기.
-//다음과 같은 [ ‘Life’, ‘is’ , ‘too’, ‘short’] 리스트를 ‘Life is too short’과 같이
-//하나의 문자열로 만들어 출력해 보자.
+//Q7. 인터페이스 사용하기
 
-import java.util.ArrayList;
-import java.util.Arrays;
+class Gold {
+}
+class Sliver {
+}
+class Bronze {
+}
+class MineralCalculator{
+    int value = 0;
+        public void add(Gold gold) {
+             this.value +=150000;
+}
+        public void add(Sliver sliver) {
+             this.value +=100000;
+}
+        public void add(Bronze bronze) {
+             this.value +=70000;
+}
+        public int getValue() {
+             return this.value;
+}
+}
 
 public class Main7 {
     public static void main(String[] args) {
-        ArrayList<String> myList = new ArrayList<>(Arrays.asList("Life", "is", "too", "short"));
-        String result = String.join(" ", myList);
-        System.out.println(result);
+        MineralCalculator cal = new MineralCalculator();
+        cal.add(new Gold());
+        cal.add(new Sliver());
+        cal.add(new Bronze());
+        System.out.println(cal.getValue());
     }
 }
